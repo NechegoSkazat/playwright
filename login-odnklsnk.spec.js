@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-
+// логин через ок, проверка, что находимся в лк (предпоследняя строка)
 test('test', async ({ page }) => {
   await page.goto('https://auth.nuzhnapomosh.ru/');
   await page.getByRole('list').getByRole('button').nth(1).click();
