@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-
+// не работает, не отмечается второй чекбокс 
 test('test', async ({ page }) => {
   // await page.goto('https://nuzhnapomosh.ru/');
   // await page.getByRole('link', { name: 'войти' }).click();
