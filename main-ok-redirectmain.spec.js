@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-//главная - логин - редирект на главную - разлог
+//главная - логин в ок - редирект на главную - разлог
 test('test', async ({ page }) => {
   await page.goto('https://nuzhnapomosh.ru/');
   await page.getByRole('link', { name: 'войти' }).click();
