@@ -21,7 +21,7 @@ test('np auth and logout', async ({ page }) => {
   await userMenuButton.click();
 
   await page.getByRole('link', { name: 'Выйти' }).click();
-  await expect(page).toHaveURL(new RegExp(`^${authURL}`), { timeout: 10000 });
+  await expect(page).toHaveURL(new RegExp(`^${npURL}`), { timeout: 10000 });
   
   await page.close();
 });
