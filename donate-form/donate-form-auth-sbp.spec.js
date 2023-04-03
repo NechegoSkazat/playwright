@@ -65,5 +65,6 @@ test('np auth and sbp pay', async ({ page }) => {
   const sbpQRCode = page.locator('.js-np-donate-form-sbp-qr');
   await sbpQRCode.click();
   await expect(page).toHaveURL(new RegExp(`^${sbpURL}`));
+  
   await page.close();
 });
