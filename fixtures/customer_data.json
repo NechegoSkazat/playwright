@@ -1,0 +1,13 @@
+{
+    "test_user":
+        {
+        "card_number": "",
+        "expiration_date": "",
+        "card_owner": "",
+        "CVV": "",
+        "first_name": "",
+        "last_name": "",
+        "phone": "",
+        "email": "",
+        }
+}
