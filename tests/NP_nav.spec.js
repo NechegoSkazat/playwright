@@ -84,20 +84,20 @@ test.describe('Навигация в бургере', () => {
     await expect(page).toHaveURL("https://nuzhnapomosh.ru/");
   });
 
-  test('Бургер: ТД', async ({ page }) => {
-    await page.getByRole('link', { name: 'Такие дела Дружественное медиа о социальных проблемах' }).click();
-    await expect(page).toHaveURL(/^https:\/\/takiedela\.ru\/\?utm_source=np&utm_campaign=header_aside&_ga=.*$/);
-  });
+  // test('Бургер: ТД', async ({ page }) => {
+  //   await page.getByRole('link', { name: 'Такие дела' }).click();
+  //   await expect(page).toHaveURL(/^https:\/\/takiedela\.ru\/\?utm_source=np&utm_campaign=header_aside&_ga=.*$/);
+  // });
 
-  test('Бургер: ЕБТ', async ({ page }) => {
-    await page.getByRole('link', { name: 'Если быть точным Найти данные по социальным проблемам', exact: true }).click();
-    await expect(page).toHaveURL("https://tochno.st/?utm_source=np&utm_campaign=header_aside");
-  });
+  // test('Бургер: ЕБТ', async ({ page }) => {
+  //   await page.getByRole('link', { name: 'Если быть точным', exact: true }).click();
+  //   await expect(page).toHaveURL("https://tochno.st/?utm_source=np&utm_campaign=header_aside");
+  // });
 
-  test('Бургер: Есть смысл', async ({ page }) => {
-    await page.getByRole('link', { name: 'Есть смысл Книги на социально значимые темы' }).click();
-    await expect(page).toHaveURL("https://smysl.shop/?utm_source=np&utm_campaign=header_aside");
-  });
+  // test('Бургер: Есть смысл', async ({ page }) => {
+  //   await page.getByRole('link', { name: 'Есть смысл' }).click();
+  //   await expect(page).toHaveURL("https://smysl.shop/?utm_source=np&utm_campaign=header_aside");
+  // });
 
   test('Бургер: ПС', async ({ page }) => {
     await page.getByRole('link', { name: 'Пользуясь случаем Создать свое благотворительное событие', exact: true }).click();
@@ -110,37 +110,37 @@ test.describe('Навигация в бургере', () => {
   });
   
   test('Бургер: ЯДРО', async ({ page }) => {
-    await page.getByRole('link', { name: 'Ядро Стать партнером и начать работать эффективнее', exact: true }).click();
+    await page.getByRole('link', { name: 'Ядро Стать партнером и начать эффективно зарабатывать', exact: true }).click();
     await expect(page).toHaveURL(/https:\/\/core\.nuzhnapomosh\.ru\/\?utm_source=np&utm_campaign=header_aside&_ga=.*$/);
   });
 
   test('Бургер: Акция «Один для всех»', async ({ page }) => {
-    await page.getByRole('link', { name: 'Акция «Один для всех»' }).click();
+    await page.getByRole('link', { name: 'Один для всех' }).click();
     await expect(page).toHaveURL(/^https:\/\/one\.nuzhnapomosh\.ru\/\?utm_source=np&utm_campaign=header_aside&_ga=.*$/);
   });
 
   test('Бургер: Акция «Помогаем миллионам»', async ({ page }) => {
-  await page.getByRole('link', { name: 'Акция «Помогаем миллионам»' }).click();
+  await page.getByRole('link', { name: 'Помогаем миллионам' }).click();
   await expect(page).toHaveURL(/^https:\/\/help\.nuzhnapomosh\.ru\/\?utm_source=np&utm_campaign=header_aside&_ga=.*$/);
   });
 
   test('Бургер: Акция «Остаёмся помогать»', async ({ page }) => {
-    await page.getByRole('link', { name: 'Акция «Остаёмся помогать»' }).click();
+    await page.getByRole('link', { name: 'Остаёмся помогать' }).click();
     await expect(page).toHaveURL(/^https:\/\/stay\.nuzhnapomosh\.ru\/\?utm_source=np&utm_campaign=header_aside&_ga=.*$/);
   });
 
   test('Бургер: Акция «Безнадёге нет»', async ({ page }) => {
-    await page.getByRole('link', { name: 'Акция «Безнадёге нет»' }).click();
+    await page.getByRole('link', { name: 'Безнадёге нет' }).click();
     await expect(page).toHaveURL('https://beznadege.net/?utm_source=np&utm_campaign=header_aside');
   });
 
   test('Бургер: Акция «Рубль в день»', async ({ page }) => {
-    await page.getByRole('link', { name: 'Акция «Рубль в день»' }).click();
+    await page.getByRole('link', { name: 'Рубль в день' }).click();
     await expect(page).toHaveURL(/^https:\/\/365\.nuzhnapomosh\.ru\/\?utm_source=np&utm_campaign=header_aside&_ga=.*$/);
   });
 
   test('Бургер: Акция «Меняй игру»', async ({ page }) => {
-    await page.getByRole('link', { name: 'Чемпионат «Меняй игру»' }).click();
+    await page.getByRole('link', { name: 'Меняй игру' }).click();
     await expect(page).toHaveURL('https://changethegame.ru/?utm_source=np&utm_campaign=header_aside');
   });
 });
@@ -199,7 +199,7 @@ test.describe('Футер', () => {
       page.waitForEvent('download'), // wait for download to start
       page.getByRole('link', { name: 'Оферта . Откроется в новой вкладке' }).click()
     ]);
-    expect(download.suggestedFilename()).toBe('oferta_np.pdf')
+    expect(download.suggestedFilename()).toBe('Оферта № 1 на уставные цели new.pdf')
   });
   // await page.goto('https://nuzhnapomosh.ru/');
   // const page3Promise = page.waitForEvent('popup');

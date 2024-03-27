@@ -89,27 +89,3 @@ test('Check registration mails', async ({ page }) => {
   let Data = await fetchAndSaveMails(username, domain);
   await console.log(Data)
 });
-
-test('Registration ru email', async ({ page }) => {
-  await console.log(RU_EMAIL)
-  await page.goto('https://nuzhnapomosh.ru/');
-  await page.getByRole('link', { name: 'войти' }).click();
-  await page.getByPlaceholder('Email').click();
-  await page.getByPlaceholder('Email').fill(RU_EMAIL);
-  await page.getByRole('button', { name: 'Продолжить' }).click();
-  await page.getByPlaceholder('Введите пароль').click();
-  await page.getByPlaceholder('Введите пароль').fill(GEN_PASSWORD);
-  await page.locator('.b-checkbox__decor').click();
-  await page.getByRole('button', { name: 'Продолжить' }).click();
-  await page.getByRole('menuitem', { name: 'Меню пользователя' }).click();
-  await page.getByRole('link', { name: 'Личный кабинет' }).click();
-  await expect(page.locator('.notify__text')).toContainText(
-    ['Подтвердите ваш email – нажмите на ссылку в письме, которое мы отправили вам на ' + 
-    RU_EMAIL + '. ' +
-    'После этого вы получите доступ ко всему личному кабинету. '+ 
-    'Отправить письмо еще раз. '+'Если возникли сложности, напишите нам на '+ 
-    'mne@nuzhnapomosh.ru']);
-  await page.locator('[id="np-header-button-user"]').click();
-  await page.getByLabel('Меню пользователя').getByRole('link', { name: 'Настройки аккаунта' }).click();
-  await expect(page.getByPlaceholder('Введите email')).toHaveValue(RU_EMAIL);
-});

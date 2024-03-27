@@ -1,13 +1,55 @@
 {
     "test_user":
         {
-        "card_number": "",
-        "expiration_date": "",
-        "card_owner": "",
-        "CVV": "",
         "first_name": "",
         "last_name": "",
         "phone": "",
         "email": "",
+        "NP_password": ""
+        },
+    "vk_user":
+        {
+        "first_name": "Np",
+        "last_name": "Testov",
+        "phone": "+381629267175",
+        "email": "np_test@inbox.ru",
+        "NP_password": "",
+        "service_password": "o?QMV3tf~xaA"
+        },
+    "ok_user":
+        {
+        "first_name": "НП",
+        "last_name": "Тест",
+        "phone": "+381629267175",
+        "email": "d.podverbnyi@gmail.com",
+        "NP_password": "",
+        "service_password": "?#;!=0FZW;3mAn#x<rBW"
+        },
+    "yandex_user":
+        {
+        "first_name": "НП",
+        "last_name": "Тестовый",
+        "phone": "+381629267175",
+        "email": "nuzhnapomosh-test@yandex.ru",
+        "NP_password": "",
+        "service_password": "Z{];nnK]UjT}uhHAB?1s"
+        },
+    "mailru_user":
+        {
+        "first_name": "НП",
+        "last_name": "Тестовый",
+        "phone": "",
+        "email": "d.podverbny@mail.ru",
+        "NP_password": "",
+        "service_password": "M;(69Ap[3A)yHM2<#Nv1"
+        },
+    "autotest_user":
+        {
+        "first_name": "Дмитрий",
+        "last_name": "Подвербный",
+        "phone": "+381629267175",
+        "email": "permanent@nechegoskazat.ru",
+        "NP_password": "tuIw1I0}T7PJQY1S9mO]",
+        "service_password": ""
         }
 }

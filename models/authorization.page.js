@@ -4,7 +4,7 @@ exports.AuthorizationPage = class AuthorizationPage {
     constructor(page) {
       this.page = page;
       this.accountPageButton = page.locator('[id="np-header-button-user"]');
-      this.accountSettings = page.getByRole('link', { name: 'Настройки аккаунта' });
+      this.accountSettings = page.getByLabel('Меню пользователя').getByRole('link', { name: 'Настройки аккаунта' });
       this.userEmail = page.getByPlaceholder('Введите email');
       this.emailField = page.getByPlaceholder('Email');
       this.passwordField = page.getByPlaceholder('Введите пароль');
@@ -26,5 +26,11 @@ exports.AuthorizationPage = class AuthorizationPage {
       await this.passwordField.fill(password);
       await this.enterButton.click(); 
       // await this.page.getByRole('menuitem', { name: 'Меню пользователя' })
+    }
+    
+    async assertAuthorization(email) {
+      await this.accountPageButton.click();
+      await this.accountSettings.click();
+      await expect(this.userEmail).toHaveValue(email);
     }
   }

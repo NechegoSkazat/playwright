@@ -30,41 +30,30 @@ test.beforeEach(async ({ page }) => {
   await page.getByRole('menuitem', { name: 'Меню пользователя' });
 });
 
-test('Разовое пожертвование в случайный фонд', async ({ page }) => {
+test('Разовое пожертвование https://nuzhnapomosh.ru/pay', async ({ page }) => {
   test.setTimeout(120000);
   
   const donationPage = new DonationPage(page);
-  const randomFund = await donationPage.getRandomFund();
-  console.log(`Разовое пожертвование в ${randomFund}`);
-  await page.getByRole('link', { name: `Помочь ${randomFund}`, exact: true }).click();
+  console.log(`Разовый платёж через https://nuzhnapomosh.ru/pay`);
+  await page.goto('https://nuzhnapomosh.ru/pay');
   await donationPage.singleDonation.check();
-  await page.waitForTimeout(2000)
   await page.getByPlaceholder('Другая сумма').fill(DONATION);
-  await page.waitForTimeout(2000)
-  await page.getByRole('button', { name: `Перейти к оплате` }).click();
-  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: `Оформить пожертвование на ${DONATION} ₽` }).click();
 
   const utils = new Utils();
   const formattedDate = await utils.currentDate();
-  //Проверка отображения пожертвования в ЛК
-  await donationPage.checkSingleDonation(randomFund, DONATION, formattedDate);
+  await donationPage.checkSingleDonation('Нужна помощь', DONATION, formattedDate);
 });
 
-test('Оформление подписки на случайный фонд', async ({ page }) => {
+test('Оформление подписки https://nuzhnapomosh.ru/pay', async ({ page }) => {
   test.setTimeout(120000);
 
   const donationPage = new DonationPage(page);
-  const randomFund = await donationPage.getRandomFund();
-  console.log(`Создаём подписку на ${randomFund}`);
-  await page.getByRole('link', { name: `Помочь ${randomFund}`, exact: true }).click();
+  console.log(`Разовый платёж через https://nuzhnapomosh.ru/pay`);
+  await page.goto('https://nuzhnapomosh.ru/pay');
   await donationPage.recurrentPayment.check();
-  await page.waitForTimeout(2000)
   await page.getByPlaceholder('Другая сумма').fill(DONATION);
-  await page.waitForTimeout(2000)
-  await page.getByRole('button', { name: `Перейти к оплате` }).click();
-  await page.waitForTimeout(2000)
   await page.getByRole('button', { name: `Оформить пожертвование на ${DONATION} ₽` }).click();
 
-  await donationPage.checkRecurrentDonation(randomFund, DONATION);
+  await donationPage.checkRecurrentDonation('Нужна помощь', DONATION);
 });

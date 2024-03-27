@@ -14,6 +14,10 @@ exports.DonationPage = class DonationPage {
       this.donateButton = page.getByRole('button', { name: `Оформить пожертвование` });
       this.continuePayment = page.getByRole('button', { name: 'Перейти к оплате' })
       this.funds = page.getByRole('link', { name: 'Фонды', exact: true });
+      this.sbp = page.locator('#np-donate-form-payment-sbp');
+      this.tinkoffPay = page.getByLabel('Tinkoff Pay');
+      this.sberPay = page.getByLabel('SberPay');
+      this.yandexPay = page.getByLabel('Yandex Pay'); 
     };
    
     async assertAuthorization(email) {
