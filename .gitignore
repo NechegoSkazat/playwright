@@ -1,7 +1,7 @@
 node_modules/
+/fixtures/
 /test-results/
 /playwright-report/
 /playwright/.cache/
 /local_backlog/
 .github/
-fixtures/
