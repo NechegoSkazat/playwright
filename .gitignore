@@ -4,3 +4,4 @@ node_modules/
 /playwright/.cache/
 /local_backlog/
 .github/
+fixtures/
